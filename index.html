@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment04</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <h1 class="text-center text-secondary mb-5">Assignment-04</h1>
+
+
+    <h3 class="text-center mx-auto w-75 text-secondary fw-bold text-danger my-5">এটা আপনার অপশনাল সাপোর্ট।তবে আমি রিকমেন্ড করবো আগে আপনি অন্তত একবার চেষ্টা করে দেখুন।আপনি অবশ্যই পারবেন।যদি কোনো কারনে না পারেন,তবে এই কোড গুলো ইউস করতে পারেন।কিন্তু ফাংশন গুলো পরে নিজে নিজে বুঝার চেষ্টা করবেন অবশ্যই</h3>
+
+<hr>
+<hr>
+<hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5">
+                <h2>Problem-01</h2>
+                <img class="w-100" src="img/problem1.JPG" alt="">
+                <p>
+                    // Problem 01<br>
+                    // Problem 01<br>
+                    // Problem 01<br> <br><br>
+        
+        
+        
+                    function seerToMon(seer){<br> <br>
+        
+                    //error for string<br>
+                    if (typeof seer != 'number') {<br>
+                    return 'Please give a number, not a word';<br>
+                    }<br> <br><br>
+        
+                    // error for less than 0<br>
+                    else if (seer <= 0) {<br>
+                        return 'Please give a positive number';<br>
+                        }<br> <br><br>
+        
+                        // fixed variable <br>
+                        const divider = 40;<br> <br><br>
+        
+                        // formulla <br>
+                        let mon = seer / divider;<br>
+                        return mon;<br>
+        
+                        }<br> <br><br>
+                        let seer = 240;<br>
+                        console.log(seerToMon(seer)); //result : 6<br> <br><br><br>
+        
+                </p>
+                <br>
+                <br>
+                <br>
+                <hr/>
+            </div>
+            <div class="col-12 mb-5">
+                <h2>Problem-02</h2>
+                <img class="w-100" src="img/problem02.JPG" alt="">
+                <p>
+
+                    // Problem 02 <br>
+                    // Problem 02 <br>
+                    // Problem 02 <br> <br><br><br>
+        
+        
+                    function totalSales(shirt,pant,shoe){<br> <br>
+        
+                    //error for string type input<br>
+                    if (typeof shirt != 'number' || typeof pant != 'number' || typeof shoe != 'number') {<br>
+                    return 'Please order as number sir.';<br>
+                    }<br> <br><br>
+        
+                    //error for less than 0<br>
+                    else if (shirt <= 0 || pant <=0 || shoe <=0) {<br>
+                        return 'You have to oder at least 1 item of every product.';<br>
+                        }<br> <br><br>
+        
+                        //fixed price of products<br>
+                        const shirtPrice = 100;<br>
+                        const pantPrice = 200;<br>
+                        const shoePrice = 500;<br> <br><br>
+        
+                        //price by order number<br>
+                        let totalShirtPrice = shirtPrice * shirt;<br>
+                        let totalpantPrice = pantPrice * pant;<br>
+                        let totalshoePrice = shoePrice * shoe;<br> <br><br>
+        
+                        //total price<br>
+                        let totalPrice = totalShirtPrice + totalpantPrice + totalshoePrice;<br>
+                        return totalPrice;<br>
+                        }<br> <br><br><br>
+        
+                        //order number<br>
+                        const shirt = 5;<br>
+                        const pant = 5;<br>
+                        const shoe = 3;<br> <br><br><br>
+        
+                        console.log(totalSales(shirt,pant,shoe)); //result : 3000<br> <br><br><br><br><br>
+                </p>
+                <br>
+                <br>
+                <br>
+                <hr/>
+            </div>
+            <div class="col-12 mb-5">
+                <h2>Problem-03</h2>
+                <img class="w-100" src="img/problem3.JPG" alt="">
+                <p>
+
+                    // Problem 03<br>
+                    // Problem 03<br>
+                    // Problem 03<br><br><br>
+        
+        
+                    function deliveryCost(product){<br><br>
+        
+                    //error for string type input<br>
+                    if (typeof product != 'number') {<br>
+                    return 'Please order as a number sir.';<br>
+                    }<br><br>
+        
+                    // error for less than 0 <br>
+                    else if (product <= 0) {<br>
+                        return 'Please Order at least 1 product.';<br>
+                        }<br><br>
+        
+                        //fixed price for product<br>
+                        const first100price = 100;<br>
+                        const next200price = 80;<br>
+                        const upto200price = 50;<br><br>
+        
+                        //for 0-100 product price<br>
+                        if (product <= 100) {<br>
+                            let productPrice = product * first100price;<br>
+                            return productPrice;<br>
+                            }<br><br>
+        
+                            //for 101-200 product price<br>
+                            else if (product <= 200) {<br>
+                                let forFirst100price = 100 * first100price;<br>
+                                let restProduct = product - 100;<br>
+                                let forSecond200price = restProduct * 80;<br>
+                                let finalPrice = forFirst100price + forSecond200price;<br>
+                                return finalPrice;<br>
+                                }<br><br>
+        
+                                //for upto 200 product price<br>
+                                else {<br>
+                                let forFirst100price = 100 * first100price;<br>
+                                let forSecond200price = 100 * 80;<br>
+                                let restProduct = product - 200;<br>
+                                let forUpto200price = restProduct * 50;<br>
+                                let finalPrice = forFirst100price + forSecond200price + forUpto200price;<br>
+                                return finalPrice;<br>
+                                }<br>
+                                }<br><br>
+        
+                                console.log(deliveryCost(250)); //result : 20500<br>
+                </p>
+                <br>
+                <br>
+                <br>
+        
+                <hr/>
+            </div>
+            <div class="col-12 mb-5">
+                <h2>Problem-04</h2>
+                <img class="w-100" src="img/problem4.JPG" alt="">
+                <p>
+                    // Problem 04<br>
+                    // Problem 04<br>
+                    // Problem 04<br><br><br>
+        
+        
+        
+                    function perfectFriend(friends){<br><br>
+        
+                    //error for an objest as input<br>
+                    if (typeof friends != 'object') {<br>
+                    return 'Please make sure you are passing an array of friends.';<br>
+                    }<br><br>
+        
+                    //error for a string as input<br>
+                    else if (typeof friends == 'string') {<br>
+                    return 'Please make sure you are not giving a string.';<br>
+                    }<br><br>
+        
+                    // empty string for operation <br>
+                    let friend = '';<br><br>
+        
+                    //for loop to find perfect friend<br>
+                    for (let i = 0; i < friends.length; i++) {<br>
+                        const element = friends[i];<br>
+                        if (element.length == 5) {<br>
+                        friend = element;<br>
+                        break;<br>
+                        }<br>
+                        }<br>
+                        return friend;<br>
+        
+                        }<br><br><br>
+        
+                        const friends = ['nil','mohaiminul','purnata','maruf','bipul','dipok'];<br>
+                        console.log(perfectFriend(friends)); // result : maruf<br><br><br>
+        
+        
+        
+                        // The end<br>
+                        // The end<br>
+                        // The end<br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text-center text-secondary mb-5">The end</h1>
+    <p class="text-center text-secondary mb-5">all right reserved || bipul_chandro roy</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
